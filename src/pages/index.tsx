@@ -1,6 +1,6 @@
 import { useAccount } from 'wagmi'
 
-import { Account, Connect, NetworkSwitcher } from '../components'
+import { Connect } from '../components'
 
 function Page() {
   const { isConnected } = useAccount()
@@ -8,15 +8,7 @@ function Page() {
   return (
     <>
       <h1>wagmi + Next.js</h1>
-
       <Connect />
-
-      {isConnected && (
-        <>
-          <Account />
-          <NetworkSwitcher />
-        </>
-      )}
     </>
   )
 }
