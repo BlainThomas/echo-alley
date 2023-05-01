@@ -1,6 +1,7 @@
 import type { AppProps } from 'next/app'
 import NextHead from 'next/head'
 import * as React from 'react'
+import './_app.css'
 import { WagmiConfig } from 'wagmi'
 
 import { client } from '../wagmi'
@@ -11,7 +12,7 @@ function App({ Component, pageProps }: AppProps) {
   return (
     <WagmiConfig client={client}>
       <NextHead>
-        <title>wagmi</title>
+        <title>Echo Alley</title>
       </NextHead>
 
       {mounted && <Component {...pageProps} />}

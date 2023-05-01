@@ -1,15 +1,20 @@
 import { useAccount } from 'wagmi'
-
-import { Connect } from '../components'
+import { DisplayMessage } from '../components'
+import { Layout } from '../components/Layout'
 
 function Page() {
   const { isConnected } = useAccount()
 
   return (
-    <>
-      <h1>wagmi + Next.js</h1>
-      <Connect />
-    </>
+    <Layout>
+      <div className='main-feed'>
+      <h1>Welcome To Echo Alley</h1>
+      <h2>There are no messages yet. Please go to profile and post!</h2>
+      {isConnected &&
+      <DisplayMessage />
+      }
+      </div>
+    </Layout>
   )
 }
 
