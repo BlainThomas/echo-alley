@@ -1,5 +1,5 @@
 import { useAccount, useContractRead } from 'wagmi'
-import { DisplayMessage } from '../components'
+import { DisplayMessage, SendMessage } from '../components'
 import { Layout } from '../components/Layout'
 import platformContract from "../components/utils/platformContract.json"
 import { usePostsHook, Post } from '../components/hooks/usePostsHook'
@@ -7,19 +7,22 @@ import { usePostsHook, Post } from '../components/hooks/usePostsHook'
 function Page() {
   const { isConnected } = useAccount()
 
-  const { data: rawPosts } = useContractRead({
-      address: '0xecb504d39723b0be0e3a9aa33d646642d1051ee1',
-      abi: platformContract.abi,
-      functionName: 'getAllPosts',
-    })
+  // const { data: rawPosts } = useContractRead({
+  //     address: '0xecb504d39723b0be0e3a9aa33d646642d1051ee1',
+  //     abi: platformContract.abi,
+  //     functionName: 'getAllPosts',
+  //   })
 
-  const posts = usePostsHook(rawPosts as any)
+  // const posts = usePostsHook(rawPosts as any)
 
   return (
     <Layout>
       <div className='main-feed'>
         <h1>Welcome To Echo Alley</h1>
-        {posts.length === 0 ? 
+        {isConnected &&
+          <SendMessage />
+        }
+        {/* {posts.length === 0 ? 
           <h2>There are no messages yet. Please go to profile and post!</h2>
          : 
           <>
@@ -27,7 +30,7 @@ function Page() {
               <DisplayMessage key={i} post={post} />
             ))}
           </>
-        }
+        } */}
       </div>
     </Layout>
   )
