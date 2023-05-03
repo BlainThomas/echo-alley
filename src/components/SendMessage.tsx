@@ -12,7 +12,7 @@ export function SendMessage() {
     if (!post) return;
     setLoading(true);
     const { config, error } = usePrepareContractWrite({
-      address: '0xecb504d39723b0be0e3a9aa33d646642d1051ee1',
+      address: '0x972E818bE6C71750996Bf5E4c36c9Bc803101DBC',
       abi: platformContract.abi,
       functionName: 'uploadPost',
       args: [post],
@@ -34,9 +34,7 @@ export function SendMessage() {
     setLoading(false);
   }
 
-  function handleInput(e : ) {
-    setPost(e.value)
-  }
+  
 
 
   return (
