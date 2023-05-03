@@ -1,5 +1,4 @@
 export { DisplayMessage } from './DisplayMessage'
 export { SendMessage } from './SendMessage'
-export { ProfileData } from './ProfileData'
 export { MintButton } from './MintButton'
 export { SwitchButton } from './SwitchButton'

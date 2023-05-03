@@ -1,9 +1,10 @@
 import { usePrepareContractWrite, useContractWrite } from 'wagmi'
+import ipfsClient from 'ipfs-http-client';
 import { create as ipfsHttpClient } from 'ipfs-http-client'
 import platformContract from './utils/platformContract.json'
-import { MintProps } from './utils/Props'
+import { useState } from 'react'
 
-const client = ipfsHttpClient()
+const ipfs = ipfsHttpClient({ host: 'ipfs.infura.io', port: 5001, protocol: 'https' });
 
 const useMintNFT = (uri: string) => {
   const { config } = usePrepareContractWrite({
@@ -16,25 +17,23 @@ const useMintNFT = (uri: string) => {
   return mintFunction
 }
 
-export const MintButton = ( {avatar, username}: MintProps ) => {
+export const MintButton = () => {
+  const [avatar, setAvatar] = useState('');
 
   const uploadToIPFS = async (event: any) => {
-    event.preventDefault()
-    const file = event.target.files[0]
-    if (typeof file !== 'undefined') {
-        try {
-            const result = await client.add(file)
-            // setAvatar(`https://ipfs.infura.io/ipfs/${result.path}`)
-        } catch (error) {
-            console.log("ipfs image upload error: ", error)
-        }
-    }
-}
+    // Get the selected file from the input field
+    const file = event.target.files[0];
+
+    // Upload the file to IPFS and get the URI of the uploaded content
+    const { path } = await ipfs.add(file);
+
+    // Set the URI of the uploaded content to the component's state
+    setAvatar(path);
+  }
 
   const handleClick = async () => {
-    const result = await client.add(JSON.stringify({ avatar, username }))
-    const uri = result.path ? `https://ipfs.infura.io/ipfs/${result.path}` : ''
-    useMintNFT(uri)
+    // Mint the NFT using the URI of the uploaded content
+    useMintNFT(avatar)
   }
 
   return (

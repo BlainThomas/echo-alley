@@ -15,8 +15,3 @@ export interface ProfileProp {
   username: string;
   avatar: string;
 }
-
-export interface MintProps{
-  avatar: string;
-  username: string
-}
