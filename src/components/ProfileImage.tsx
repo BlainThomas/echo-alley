@@ -16,10 +16,8 @@ export function ProfileImage ( props: { id: number, isProfile: boolean } ) {
     <div className='switch-image'>
       {isLoading ? 
         <h4>Loading</h4>
-        :
-        <div >
-          <img className='NFT' src={data as string} />
-        </div>
+      :
+        <img className='NFT' src={data as string} />
       }
     </div>
   )

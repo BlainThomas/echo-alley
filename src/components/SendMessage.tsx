@@ -8,7 +8,6 @@ export function SendMessage() {
   const [post, setPost] = useState('');
   const [hash, setHash] = useState('QmVYRPge26NENGBh98kz4fJcBbpiye69cpQMZAAqFTJQNw');
 
-
   const { config } = usePrepareContractWrite({
     address: '0x972E818bE6C71750996Bf5E4c36c9Bc803101DBC',
     abi: platformContract.abi,
@@ -31,7 +30,7 @@ export function SendMessage() {
   return (
     <div className='send-message'>
       {hasProfile ? (
-        <div>
+        <div style={{ margin: 'auto' }} >
           <textarea
             required
             name='message'

@@ -5,6 +5,21 @@ body{
   margin:0;
 }
 
+h4{
+  margin: .5rem 0
+}
+
+textarea{
+  width: 50%;
+  height: 75px;
+  margin: 15px;
+  border-radius: 8px;
+  background-color: #1D1D1D;
+  border: 0;
+  padding: 5px;
+  display: block;
+}
+
 button {
   height:3rem;
   margin: 5px auto;
@@ -68,14 +83,6 @@ button:hover {
   justify-content: space-around;
 }
 
-.main-feed {
-  margin: 100px;
-}
-
-.profile {
-  margin: 100px;
-}
-
 .NFT{
   width: 150px;
   margin: 10px
@@ -84,4 +91,26 @@ button:hover {
 .NFT-options{
   display: flex;
   margin: 10px auto
+}
+
+.display-message{
+  width: 600px;
+  background-color: #2272FF;
+  border-radius: 8px;
+  margin: 20px auto;
+  padding: 5px;
+  display: flex
+}
+
+.send-message{
+  width: 600px;
+  background-color: #2272FF;
+  border-radius: 8px;
+  margin: 20px auto;
+  padding: 5px;
+
+}
+
+.message-data{
+  text-align: left;
 }
