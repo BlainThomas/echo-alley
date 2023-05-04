@@ -42,7 +42,7 @@ export function Message( props: { post: Post  }  ) {
       </div>
       <div className='message-data'>
         <h4>{props.post.author}</h4>
-        <p>{content}</p>
+        <p className='content' >{content}ghjsdfiklagfjhldsagihujbdslhjfgdskjhgflijsdbhfugbvwdeshyjugbvfrhyjuewgvblhyfrvlwehjvfhgjuwehgjuvfhduasbfLHKJEB HYFGQELEUIHGF IHUDEGAHLJVCBDLSHJ YW IFIE FIUEIVFG UHLBVHJL BUIF WGUIFG EHIJ;GFIHAJHC BH;KI</p>
       </div>
     </div>
     )

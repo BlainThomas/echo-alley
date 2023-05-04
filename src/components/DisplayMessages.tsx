@@ -1,6 +1,7 @@
 import { useContractRead } from 'wagmi'
 import { Post } from "./utils/Props"
 import platformContract from './utils/platformContract.json'
+import { Message } from './'
 
 
 export function DisplayMessages() {
@@ -16,25 +17,20 @@ export function DisplayMessages() {
       hash: post.hash,
       tipAmount: post.tipAmount.toString(),
       author: post.author.toString(),
+      content: '',
     })) as Post[]
 
     console.log(posts)
 
   return (
-    <div className='display-image'>
-      { isLoading ? 
+    <div className='display-messages'>
+      {isLoading ? (
         <h3>Loading</h3>
-      :
-      posts.length > 0 ? posts.map((post: Post, i: number) => (
-        <div key={post.id}>
-          <h2>{post.author}</h2>
-          <p>test{post.content}</p>
-          <p>Tip amount: {post.tipAmount}</p>
-        </div>
-      )) :(
+      ) : posts.length > 0 ? (
+        posts.map((post: Post, i: number) => <Message key={i} post={post} />)
+      ) : (
         <h3>There are no messages yet</h3>
-      )
-    }
+      )}
     </div>
-    )
+  )
 }
