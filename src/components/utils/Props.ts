@@ -1,13 +1,10 @@
-export interface DisplayMessageProp {
-    post: { 
-      key: string;
-      author: {
-        username: string;
-      };
-      content: string;
-      tipAmount: number;
-    };
-  }
+export interface Post { 
+    id: number;
+    author: string;
+    hash:  string;
+    content: string;
+    tipAmount: number;
+  };
 
 
 export interface ProfileProp {

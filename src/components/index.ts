@@ -1,4 +1,5 @@
-export { DisplayMessage } from './DisplayMessage'
+export { DisplayMessages } from './DisplayMessages'
 export { SendMessage } from './SendMessage'
-export { MintButton } from './MintButton'
-export { SwitchButton } from './SwitchButton'
+export { MintImage } from './MintImage'
+export { SwitchImage } from './SwitchImage'
+export { ProfileImage } from './ProfileImage'

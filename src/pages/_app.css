@@ -75,3 +75,13 @@ button:hover {
 .profile {
   margin: 100px;
 }
+
+.NFT{
+  width: 150px;
+  margin: 10px
+}
+
+.NFT-options{
+  display: flex;
+  margin: 10px auto
+}
