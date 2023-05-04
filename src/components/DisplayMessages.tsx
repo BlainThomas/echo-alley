@@ -18,7 +18,7 @@ export function DisplayMessages() {
     posts = (rawPosts as any).map( (post: any) => ({
       id: post.id.toString(),
       hash: post.hash,
-      tipAmount: post.tipAmount.toString(),
+      tipAmount: (post.tipAmount/1000000000000000000).toString(),
       author: post.author.toString(),
       content: '',
     })) as Post[]
@@ -29,7 +29,7 @@ export function DisplayMessages() {
       {isLoading ? (
         <h3>Loading</h3>
       ) : rawPosts ? (
-        posts.map((post: Post, i: number) => <Message key={i} post={post} />)
+        posts.reverse().map((post: Post, i: number) => <Message key={i} post={post} />)
       ) : (
         <h3>There are no messages yet</h3>
       )}

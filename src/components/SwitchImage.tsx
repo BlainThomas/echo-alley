@@ -13,7 +13,7 @@ export function SwitchImage ( props: { id: number, isProfile: boolean } ) {
   })
 
   const { config } = usePrepareContractWrite({
-    address: '0xecb504d39723b0be0e3a9aa33d646642d1051ee1',
+    address: '0x972E818bE6C71750996Bf5E4c36c9Bc803101DBC',
     abi: platformContract.abi,
     functionName: 'setProfile',
     args: [id],
