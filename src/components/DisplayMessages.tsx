@@ -26,8 +26,8 @@ export function DisplayMessages() {
     <div className='display-messages'>
       {isLoading ? (
         <h3>Loading</h3>
-      ) : posts.length > 0 ? (
-        posts.map((post: Post, i: number) => <Message key={i} post={post} />)
+      // ) : posts.length > 0 ? (
+      //   posts.map((post: Post, i: number) => <Message key={i} post={post} />)
       ) : (
         <h3>There are no messages yet</h3>
       )}
