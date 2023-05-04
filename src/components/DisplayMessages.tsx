@@ -12,13 +12,13 @@ export function DisplayMessages() {
       functionName: 'getAllPosts',
     })
 
-    // const posts = (rawPosts as any).map( (post: any) => ({
-    //   id: post.id.toString(),
-    //   hash: post.hash,
-    //   tipAmount: post.tipAmount.toString(),
-    //   author: post.author.toString(),
-    //   content: '',
-    // })) as Post[]
+    const posts = (rawPosts as any).map( (post: any) => ({
+      id: post.id.toString(),
+      hash: post.hash,
+      tipAmount: post.tipAmount.toString(),
+      author: post.author.toString(),
+      content: '',
+    })) as Post[]
 
     // console.log(posts)
 
