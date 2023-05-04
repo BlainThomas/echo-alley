@@ -1,0 +1,122 @@
+body{
+  background-color: #1D1D1D;
+  color:#FFFFFF;
+  width: 100%;
+  margin:0;
+}
+
+h4{
+  margin: .5rem 0
+}
+
+textarea{
+  width: 50%;
+  height: 75px;
+  margin: 15px;
+  border-radius: 8px;
+  background-color: #1D1D1D;
+  border: 0;
+  padding: 5px;
+  display: block;
+}
+
+button {
+  height:3rem;
+  margin: 5px auto;
+  padding: 15px 25px;
+  background-color: #1D1D1D;
+  border-radius: 8px;
+  color: #FFFFFF;
+  border: 0;
+}
+
+button:hover {
+  background-color: #FFFFFF;
+  color: #1D1D1D;
+}
+
+.home-link{
+  color:#FFFFFF;
+  text-decoration: none;
+}
+
+.home-link:hover {
+  color: #1D1D1D;
+}
+
+.link {
+  margin-top: 12px;
+  color:#FFFFFF;
+  text-decoration: none;
+}
+
+.link:hover {
+  color: #1D1D1D;
+}
+
+.layout {
+  text-align: center;
+}
+
+.wallet-modal {
+  text-align: center;
+  background-color: #2272FF;
+  position: fixed;
+  padding: 15px;
+  border-radius: 8px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 10;
+}
+
+.navbar {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  background-color: #2272FF;
+}
+
+.nav-links {
+  width: 300px;
+  display: flex;
+  justify-content: space-around;
+}
+
+.NFT{
+  width: 150px;
+  margin: 10px
+}
+
+.NFT-options{
+  display: flex;
+  margin: 10px auto
+}
+
+.display-message{
+  width: 600px;
+  background-color: #2272FF;
+  border-radius: 8px;
+  margin: 20px auto;
+  padding: 5px;
+  display: flex
+}
+
+.send-message{
+  width: 600px;
+  background-color: #2272FF;
+  border-radius: 8px;
+  margin: 20px auto;
+  padding: 5px;
+
+}
+
+.message-data{
+  text-align: left;
+  width: 80%
+}
+
+.content{
+  inline-size: 80%;
+  overflow-wrap: break-word;
+}

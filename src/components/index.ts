@@ -1,1 +1,6 @@
-export { Connect } from './Connect'
+export { DisplayMessages } from './DisplayMessages'
+export { Message } from './Message'
+export { SendMessage } from './SendMessage'
+export { MintImage } from './MintImage'
+export { SwitchImage } from './SwitchImage'
+export { ProfileImage } from './ProfileImage'
