@@ -9,11 +9,11 @@ function Page() {
     <Layout>
       <div className='main-feed'>
         <h1>Welcome To Echo Alley</h1>
-        {/* {isConnected &&
+        {isConnected &&
           <>
             <SendMessage />
-            <DisplayMessages /> 
-          </>}  */}
+            {/* <DisplayMessages />  */}
+          </>} 
       </div>
     </Layout>
   )
