@@ -16,7 +16,6 @@ export function DisplayMessages() {
       hash: post.hash,
       tipAmount: post.tipAmount.toString(),
       author: post.author.toString(),
-      content: '',
     })) as Post[]
 
     console.log(posts)

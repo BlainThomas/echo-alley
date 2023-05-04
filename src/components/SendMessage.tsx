@@ -1,11 +1,11 @@
-import { useState, useCallback } from 'react';
+import { useState, useEffect } from 'react';
 import platformContract from './utils/platformContract.json';
 import { usePrepareContractWrite, useContractWrite, useSigner } from 'wagmi';
 import { ipfs } from './utils/ipfs';
 
 export function SendMessage() {
   const [hasProfile, setHasProfile] = useState(true);
-  const [post, setPost] = useState('');
+  const [post, setPost] = useState('test');
   const [hash, setHash] = useState('QmVYRPge26NENGBh98kz4fJcBbpiye69cpQMZAAqFTJQNw');
 
 
@@ -22,9 +22,17 @@ export function SendMessage() {
   }
 
   async function handlePost () {
+    console.log(post)
     const result = await ipfs.add(JSON.stringify({ post }));
     console.log(result)
     setHash( (result as any).path )
+  }
+
+  useEffect(() => {
+    if (hash != 'QmVYRPge26NENGBh98kz4fJcBbpiye69cpQMZAAqFTJQNw')
+      write?.()
+  }, [hash]);
+  function writeNewHash(){
     write?.();
   }
 
@@ -33,12 +41,13 @@ export function SendMessage() {
       {hasProfile ? (
         <div>
           <textarea
+            style={{ margin: '20px auto 10px' }}
             required
             name='message'
             placeholder='Message'
             onChange={handleInput}
           />
-          <button onClick={ async () => handlePost() } >Post!</button>
+          <button style={{ margin: '10px auto' }} onClick={ async () => handlePost() } >Post!</button>
         </div>
       ) : (
         <div className='text-center'>
