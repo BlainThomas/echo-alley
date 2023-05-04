@@ -11,16 +11,19 @@ export function DisplayMessages() {
       abi: platformContract.abi,
       functionName: 'getAllPosts',
     })
+  
+  let posts
 
-    const posts = (rawPosts as any).map( (post: any) => ({
+  if ( rawPosts ) {
+    posts = (rawPosts as any).map( (post: any) => ({
       id: post.id.toString(),
       hash: post.hash,
       tipAmount: post.tipAmount.toString(),
       author: post.author.toString(),
       content: '',
     })) as Post[]
-
     // console.log(posts)
+  }
 
   return (
     <div className='display-messages'>
