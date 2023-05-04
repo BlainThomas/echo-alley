@@ -12,7 +12,7 @@ function Page() {
         {isConnected &&
           <>
             <SendMessage />
-            {/* <DisplayMessages />  */}
+            <DisplayMessages /> 
           </>} 
       </div>
     </Layout>
