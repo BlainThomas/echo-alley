@@ -11,26 +11,28 @@ export function DisplayMessages() {
       abi: platformContract.abi,
       functionName: 'getAllPosts',
     })
-
-    const posts = (rawPosts as any).map( (post: any) => ({
+  
+    let posts: Post[] = [];
+    
+  if ( rawPosts ) {
+    posts = (rawPosts as any).map( (post: any) => ({
       id: post.id.toString(),
       hash: post.hash,
-      tipAmount: post.tipAmount.toString(),
+      tipAmount: (post.tipAmount/1000000000000000000).toString(),
       author: post.author.toString(),
       content: '',
     })) as Post[]
-
-    console.log(posts)
+  }
 
   return (
     <div className='display-messages'>
       {isLoading ? (
         <h3>Loading</h3>
-      ) : posts.length > 0 ? (
-        posts.map((post: Post, i: number) => <Message key={i} post={post} />)
+      ) : rawPosts ? (
+        posts.reverse().map((post: Post, i: number) => <Message key={i} post={post} />)
       ) : (
         <h3>There are no messages yet</h3>
       )}
     </div>
   )
-}
+} 

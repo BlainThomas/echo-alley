@@ -1,13 +1,15 @@
 import { useState, useEffect } from 'react';
 import platformContract from './utils/platformContract.json';
-import { usePrepareContractWrite, useContractWrite, useSigner } from 'wagmi';
+import { usePrepareContractWrite, useContractWrite, useContractRead, useAccount } from 'wagmi';
+import { BigNumber } from 'ethers';
 import { ipfs } from './utils/ipfs';
 
 export function SendMessage() {
-  const [hasProfile, setHasProfile] = useState(true);
   const [post, setPost] = useState('test');
   const [hash, setHash] = useState('QmVYRPge26NENGBh98kz4fJcBbpiye69cpQMZAAqFTJQNw');
 
+
+  
 
   const { config } = usePrepareContractWrite({
     address: '0x972E818bE6C71750996Bf5E4c36c9Bc803101DBC',
@@ -38,22 +40,16 @@ export function SendMessage() {
 
   return (
     <div className='send-message'>
-      {hasProfile ? (
-        <div>
-          <textarea
-            style={{ margin: '20px auto 10px' }}
-            required
-            name='message'
-            placeholder='Message'
-            onChange={handleInput}
-          />
-          <button style={{ margin: '10px auto' }} onClick={ async () => handlePost() } >Post!</button>
-        </div>
-      ) : (
-        <div className='text-center'>
-          <h2>Must own an NFT to post</h2>
-        </div>
-      )}
+      <div>
+        <textarea
+          style={{ margin: '20px auto 10px' }}
+          required
+          name='message'
+          placeholder='Message'
+          onChange={handleInput}
+        />
+        <button style={{ margin: '10px auto' }} onClick={ async () => handlePost() } >Post!</button>
+      </div>
     </div>
   );
 }
