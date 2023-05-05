@@ -7,7 +7,7 @@ import { Message } from './'
 export function DisplayMessages() {
 
   const { data: rawPosts, isLoading } = useContractRead({
-      address: '0x972E818bE6C71750996Bf5E4c36c9Bc803101DBC',
+      address: `0x${platformContract.address}`,
       abi: platformContract.abi,
       functionName: 'getAllPosts',
     })
@@ -26,13 +26,15 @@ export function DisplayMessages() {
 
   return (
     <div className='display-messages'>
-      {isLoading ? (
+      {isLoading ?
         <h3>Loading</h3>
-      ) : rawPosts ? (
+      : rawPosts && posts.length > 0 ?
         posts.reverse().map((post: Post, i: number) => <Message key={i} post={post} />)
-      ) : (
-        <h3>There are no messages yet</h3>
-      )}
+      : 
+      <div className='send-message'>
+        <h3>There are no posts yet</h3>
+      </div>
+      }
     </div>
   )
 } 

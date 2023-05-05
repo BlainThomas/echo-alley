@@ -1,39 +1,38 @@
-import { usePrepareContractWrite, useContractWrite, useContractRead } from 'wagmi'
+import { useContractRead, useAccount } from 'wagmi'
 import platformContract from './utils/platformContract.json'
+import { SwitchButton } from './'
 
 export function SwitchImage ( props: { id: number, isProfile: boolean } ) {
 
+  const { address} = useAccount()
+
   const id = props.id+1
 
-  const { data, isLoading } = useContractRead({
-    address: '0x972E818bE6C71750996Bf5E4c36c9Bc803101DBC',
+  const { data } = useContractRead({
+    address: `0x${platformContract.address}`,
     abi: platformContract.abi,
     functionName: 'tokenURI',
     args: [id]
   })
 
-  const { config } = usePrepareContractWrite({
-    address: '0x972E818bE6C71750996Bf5E4c36c9Bc803101DBC',
+  const { data: owner, isLoading: ownerLoading } = useContractRead({
+    address: `0x${platformContract.address}`,
     abi: platformContract.abi,
-    functionName: 'setProfile',
-    args: [id],
+    functionName: 'ownerOf',
+    args: [id]
   })
-  const { write: switchFunction } = useContractWrite(config)
-
-  const handleClick = async () => {
-    switchFunction?.()
-  }
 
   return (
-    <div className='switch-image'>
-      {isLoading ? 
+    <>
+      {ownerLoading ? 
         <h4>Loading</h4>
-        :
+        : owner == address ?
         <div >
           <img className='NFT' src={data as string} />
-          <button onClick={handleClick}>Switch NFT</button>
+          <SwitchButton id={id} />
         </div>
+        : null
       }
-    </div>
+    </>
   )
 }

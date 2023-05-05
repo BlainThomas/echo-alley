@@ -20,6 +20,16 @@ textarea{
   display: block;
 }
 
+input{
+  width: 200px;
+  margin: 15px auto;
+  border-radius: 8px;
+  background-color: #1D1D1D;
+  border: 0;
+  padding: 5px;
+  display: block;
+}
+
 button {
   height:3rem;
   margin: 5px auto;
@@ -83,14 +93,27 @@ button:hover {
   justify-content: space-around;
 }
 
+.profile{
+  width: 300px;
+  background-color: #2272FF;
+  border-radius: 8px;
+  margin: auto;
+  padding: 15px 0;
+}
+
 .NFT{
   width: 150px;
-  margin: 10px
+  margin: 10px;
+  display:block;
+  margin: 10px auto;
 }
 
 .NFT-options{
-  display: flex;
-  margin: 10px auto
+  width: 50%;
+  border-radius: 8px;
+  background-color: #2272FF;
+  padding: 15px;
+  margin: 10px auto;
 }
 
 .display-message{

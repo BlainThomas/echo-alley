@@ -8,7 +8,7 @@ function Page() {
   const { isConnected, address } = useAccount()
 
   const { data: imageID, isLoading } = useContractRead({
-    address: '0x972E818bE6C71750996Bf5E4c36c9Bc803101DBC',
+    address: `0x${platformContract.address}`,
     abi: platformContract.abi,
     functionName: 'profiles',
     args: [address],
@@ -16,7 +16,7 @@ function Page() {
 
   let profile = 0
 
-  if( !isLoading ){
+  if( !isLoading && isConnected ){
     profile = BigNumber.from((imageID as any)?._hex).toNumber();
   }
 

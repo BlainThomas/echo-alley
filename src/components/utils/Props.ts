@@ -5,10 +5,3 @@ export interface Post {
     content: string;
     tipAmount: number;
   };
-
-
-export interface ProfileProp {
-  id: string;
-  username: string;
-  avatar: string;
-}

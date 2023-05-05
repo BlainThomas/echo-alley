@@ -6,7 +6,7 @@ export function ProfileImage ( props: { id: number, isProfile: boolean } ) {
   const id = props.id
 
   const { data, isLoading } = useContractRead({
-    address: '0x972E818bE6C71750996Bf5E4c36c9Bc803101DBC',
+    address: `0x${platformContract.address}`,
     abi: platformContract.abi,
     functionName: 'tokenURI',
     args: [id]
@@ -16,10 +16,12 @@ export function ProfileImage ( props: { id: number, isProfile: boolean } ) {
     <div className='switch-image'>
       {isLoading ? 
         <h4>Loading</h4>
-        :
+        : 
         <div >
+          <h2>Current Profile</h2>
           <img className='NFT' src={data as string} />
         </div>
+        
       }
     </div>
   )

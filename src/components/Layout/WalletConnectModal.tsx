@@ -33,7 +33,7 @@ export function WalletConnectModal( {walletModal, CloseModal}: WalletConnectModa
             {connectors
               .filter((x) => x.ready && x.id !== connector?.id)
               .map((x) => (
-                <button key={x.id} onClick={() => handleConnect(x)}>
+                <button style={{margin: '15px'}} key={x.id} onClick={() => handleConnect(x)}>
                   {x.name}
                   {isLoading && x.id === pendingConnector?.id && ' (connecting)'}
                 </button>
