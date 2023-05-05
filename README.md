@@ -1,16 +1,30 @@
-This is a [Next.js](https://nextjs.org) + [wagmi](https://wagmi.sh) project bootstrapped with [`create-wagmi`](https://github.com/wagmi-dev/wagmi/tree/main/packages/create-wagmi)
+# Web3MessageMe
 
-# Getting Started
+This is a React social media app that posts and reads from the blockchain.
 
-Run `npm run dev` in your terminal, and then open [localhost:3000](http://localhost:3000) in your browser.
+## Description 
 
-Once the webpage has loaded, changes made to files inside the `src/` directory (e.g. `src/pages/index.tsx`) will automatically update the webpage.
+Connect the wallet you would like to use and mint an NFT to start posting.
 
-# Learn more
+You can update or switch you PFP by minting a new NFT or reuse an old one.
 
-To learn more about [Next.js](https://nextjs.org) or [wagmi](https://wagmi.sh), check out the following resources:
+A social media app that works on the blockchain makes the messages publically
+ verifyable as well as immutable. If one is able to access the blockchain they
+ could use this contract to see messages posted by a user or current messages
+ that are being posted.
 
-- [wagmi Documentation](https://wagmi.sh) – learn about wagmi Hooks and API.
-- [wagmi Examples](https://wagmi.sh/examples/connect-wallet) – a suite of simple examples using wagmi.
-- [Next.js Documentation](https://nextjs.org/docs) learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+<br/>
+
+[Live Link](https://echo-alley.vercel.app/)
+
+<br/>
+
+[Portfolio](https://blain-thomas.vercel.app/)
+
+<br/>
+
+[GitHub Link](https://github.com/BlainThomas/echo-alley)
+
+<br/>
+
+<img src="https://github.com/BlainThomas/BlainThomas/blob/master/logos/TypeScript.png" alt="drawing" width="40"/>
