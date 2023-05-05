@@ -8,8 +8,13 @@ interface NavbarProps {
 
 export function Navbar( { OpenModal,isConnected } : NavbarProps) {
 
+
   function handleWalletModal(){
     OpenModal();
+  }
+
+  function handleGetEth(){
+     window.open('https://sepolia-faucet.pk910.de/', '_blank');
   }
  
   return (
@@ -22,9 +27,14 @@ export function Navbar( { OpenModal,isConnected } : NavbarProps) {
           <h3>Profile</h3>
         </Link>
       </div>
-      <button style={{margin:'15px'}} onClick={handleWalletModal} >
-        {isConnected ? 'Connected' : 'Connect'}
-      </button>
+      <div style={{display: 'flex'}}>
+        {isConnected && <button style={{margin:'15px'}} onClick={handleGetEth} >
+          Get Test Eth
+        </button>}
+        <button style={{margin:'15px'}} onClick={handleWalletModal} >
+          {isConnected ? 'Connected' : 'Connect'}
+        </button>
+      </div>
     </div>
   )
 }
