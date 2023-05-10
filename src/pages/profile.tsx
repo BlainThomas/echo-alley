@@ -1,4 +1,4 @@
-import { Layout, TestnetDescription } from '../components/Layout'
+import { Layout } from '../components/Layout'
 import { useContractReads, useAccount } from 'wagmi'
 import platformContract from '../components/utils/platformContract.json'
 import { MintImage, SwitchImage, ProfileImage } from '../components'
@@ -35,7 +35,6 @@ function Profile() {
 
   return (
     <Layout>
-      <TestnetDescription />
       <h1>Welcome To Your Profile</h1>
       {isConnected ?
       <>

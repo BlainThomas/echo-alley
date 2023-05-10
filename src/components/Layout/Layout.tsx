@@ -1,5 +1,5 @@
 import React, { ReactNode, useState, useRef } from 'react';
-import { Navbar, WalletConnectModal } from './'
+import { Navbar, WalletConnectModal, TestnetDescription } from './'
 import { useAccount } from 'wagmi';
 
 interface LayoutProps {
@@ -27,6 +27,7 @@ export function Layout({ children }: LayoutProps) {
         children
        : 
        <div className='connect-title'>
+        <TestnetDescription />
         <h1>Connect Wallet</h1>
       </div>
       }
