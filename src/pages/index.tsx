@@ -1,6 +1,6 @@
 import { useAccount, useContractRead } from 'wagmi'
 import { DisplayMessages, SendMessage } from '../components'
-import { Layout } from '../components/Layout'
+import { Layout, TestnetDescription } from '../components/Layout'
 import platformContract from '../components/utils/platformContract.json'
 import { BigNumber } from 'ethers'
 
@@ -22,6 +22,7 @@ function Page() {
 
   return (
     <Layout>
+      <TestnetDescription />
       <div className='main-feed'>
         <h1>Welcome To Echo Alley</h1>
         {profile > 0 ? 
